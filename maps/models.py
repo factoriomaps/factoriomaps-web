@@ -1,6 +1,11 @@
-from django.db import models
+"""
+These models are based off of the data structure found here_.  We should change it as we find we aren't using some
+fields/models and may need more.  -- Lennon  2018/11/30
 
-# Create your models here.
+.. _here: https://factoriomaps.com/assets/config/maplist.json
+"""
+
+from django.db import models
 
 
 class Map(models.Model):
