@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import maps.urls
+import account.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/maps/', include(maps.urls)),
-    path('api/v1/account/', include(maps.urls)),
+    path('api/v1/account/', include(account.urls)),
 ]
