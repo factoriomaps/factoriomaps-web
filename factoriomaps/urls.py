@@ -19,5 +19,5 @@ import maps.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/maps/', include(maps.urls, namespace='maps')),
+    path('api/v1/maps/', include(maps.urls)),
 ]

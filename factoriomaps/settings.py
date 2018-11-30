@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # DRF apps
-    'rest_framework'
+    'rest_framework',
+    
+    # Apps
+    'maps',
 ]
 
 MIDDLEWARE = [
