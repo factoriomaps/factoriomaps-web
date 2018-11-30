@@ -1,0 +1,15 @@
+#.env
+# DB
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=postgres
+
+# app
+SECRET_KEY=y6xg%o&^m4ggo5s!%mcdnu@v#neu#1v#2s9d&_q2(wixlxd((#
+DATABASE_HOST=db
+DATABASE_NAME=postgres
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+
+# for debugging and error reporting.
+DEBUG=True
