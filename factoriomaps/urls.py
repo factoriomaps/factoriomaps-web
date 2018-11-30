@@ -20,4 +20,5 @@ import maps.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/maps/', include(maps.urls)),
+    path('api/v1/account/', include(maps.urls)),
 ]
