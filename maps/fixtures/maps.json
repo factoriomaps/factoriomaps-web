@@ -1,0 +1,29 @@
+[
+    {
+        "model": "maps.map",
+        "pk": 1,
+        "fields": {
+            "name": "My Glorious Map",
+            "user": null,
+            "url": "http://example.com/url",
+            "preview_url": "http://example.com/preview",
+            "save_url": "http://example.com/url",
+            "submission_date": "2000-01-01T10:01:01Z",
+            "version": 123456,
+            "factorio_version": "0.16.57",
+            "ticks": 9874662558,
+            "save_date": "2000-01-01T01:01:01Z",
+            "timeline": true,
+            "image_compression": true,
+            "modded": false,
+            "layers": 1,
+            "collapse_layer_list": true,
+            "beta": true,
+            "public_server": true,
+            "deprecated_top_user": true,
+            "normal_user": false,
+            "mods": [],
+            "contributors": []
+        }
+    }
+]
