@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - FactorioMaps</title>
+      {% else %}
+      <title>Welcome to FactorioMaps</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>FactorioMaps: <a href="/">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
