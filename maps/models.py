@@ -9,20 +9,18 @@ from django.db import models
 
 
 class Map(models.Model):
+    def __str__(self):
+        return f'{self.user}_{self.name}_{self.submission_date}'
     name = models.CharField(max_length=256)
-    user = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, related_name='user')
     url = models.URLField()
     preview_url = models.URLField()
     save_url = models.URLField()
     submission_date = models.DateTimeField()
     version = models.IntegerField()
-    playtime = models.TimeField()
+    factorio_version = models.CharField(max_length=16)
     ticks = models.BigIntegerField()
-    options = models.OneToOneField('maps.Options', on_delete=models.CASCADE)
     save_date = models.DateTimeField()
-
-
-class Options(models.Model):
     timeline = models.BooleanField()
     image_compression = models.BooleanField()
     modded = models.BooleanField()
@@ -32,17 +30,14 @@ class Options(models.Model):
     public_server = models.BooleanField()
     deprecated_top_user = models.BooleanField()
     normal_user = models.BooleanField()
-
-
-class MapMods(models.Model):
-    map = models.ForeignKey('maps.Map', on_delete=models.CASCADE)
-    mod = models.ForeignKey('maps.Mod', on_delete=models.SET_NULL, null=True)
-
-
-class Contributors(models.Model):
-    map = models.ForeignKey('maps.Map', on_delete=models.CASCADE)
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    mods = models.ManyToManyField('maps.Mod', blank=True)
+    contributors = models.ManyToManyField('auth.User', blank=True, related_name='contributors')
 
 
 class Mod(models.Model):
-    name = models.CharField(max_length=256)
+    def __str__(self):
+        return f'{self.name}_{self.version}'
+    name = models.CharField(max_length=256) # exact name from mod portal e.g. "bobores"
+    title = models.CharField(max_length=256) # mod title e.g. "Bob's Ores"
+    version = models.CharField(max_length=16)
+    file = models.FileField(upload_to='files/mods/')
