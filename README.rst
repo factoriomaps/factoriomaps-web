@@ -1,3 +1,5 @@
+.. image:: https://travis-ci.com/factoriomaps/factoriomaps-web.svg?branch=master
+    :target: https://travis-ci.com/factoriomaps/factoriomaps-web
 .. warning::
     These docs are still a WIP, please provide feedback for better docs!
 
