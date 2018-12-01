@@ -1,0 +1,15 @@
+[run]
+branch = True
+source = 
+    account
+    maps
+
+omit = 
+    */migrations/*
+    */apps.py
+
+[report]
+exclude_lines = 
+    pragma: no cover
+
+ignore_errors = True

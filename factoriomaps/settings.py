@@ -90,7 +90,7 @@ if 'DATABASE_HOST' in os.environ:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': os.environ.get('DATABASE_NAME'),
             'USER': os.environ.get('DATABASE_USER'),
-            'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''), # Travis CI default DB password
         }
     }
 else :
