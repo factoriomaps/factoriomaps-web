@@ -9,11 +9,11 @@ services:
   - postgresql
 install:
   - pip install -r requirements.txt
-  - pip install coverage pylint-django pylint-exit
+  - pip install coverage pylint-django pylint-exit coveralls
 before_script:
 script:
   - coverage run manage.py test
   - pylint --rcfile=pylintrc account/ maps/ || pylint-exit $?
 after_success:
   - coverage report -m --skip-covered
-  - bash <(curl -s https://codecov.io/bash)
+  - coveralls
