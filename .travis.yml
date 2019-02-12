@@ -12,8 +12,8 @@ install:
   - pip install coverage pylint-django pylint-exit coveralls
 before_script:
 script:
-  - coverage run manage.py test
-  - pylint --rcfile=pylintrc account/ maps/ || pylint-exit $?
+  - coverage run manage.py test --settings=factoriomaps.settings.ci
+  - pylint --rcfile=.pylintrc account/ maps/ || pylint-exit $?
 after_success:
   - coverage report -m --skip-covered
   - coveralls

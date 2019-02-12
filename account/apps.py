@@ -1,3 +1,4 @@
+"""App file for account"""
 from django.apps import AppConfig
 
 

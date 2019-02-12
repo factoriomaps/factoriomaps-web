@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """User serializer to allow creation"""
     email = serializers.EmailField(
         validators=[UniqueValidator(queryset=User.objects.all())]
     )
@@ -13,6 +14,12 @@ class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(min_length=8)
 
     def create(self, validated_data):
+        """
+        Creation method for user account
+        :param dict validated_data:
+        :return: The created user object
+        :rtrype: auth.User
+        """
         user = User.objects.create_user(**validated_data)
         return user
 

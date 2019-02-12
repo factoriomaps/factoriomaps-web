@@ -27,10 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# This test runner uses temporary local file storage
-TEST_RUNNER = 'factoriomaps.runner.LocalStorageDiscoverRunner'
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -66,7 +62,7 @@ ROOT_URLCONF = 'factoriomaps.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -96,7 +92,7 @@ if 'DATABASE_HOST' in os.environ:
             'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''), # Travis CI default DB password
         }
     }
-else :
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
